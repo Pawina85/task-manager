@@ -5,6 +5,8 @@ import TaskList from "./components/TaskList";
 export default function App() {
   const [tasks, setTasks] = useState([]);
   const [loaded, setLoaded] = useState(false);
+  const [filter, setFilter] = useState("all");
+  const [search, setSearch] = useState("");
 
   useEffect(() => {
     const savedTasks = localStorage.getItem("tasks");
@@ -42,12 +44,31 @@ export default function App() {
     setTasks(tasks.filter((task) => task.id !== id));
   }
 
+  const filteredTasks = tasks.filter((task) => {
+   const matchesFilter =
+      filter === "all" ||
+      (filter === "active" && !task.completed) ||
+      (filter === "completed" && task.completed);
+
+      const matchesSearch = task.text
+      .toLowerCase()
+      .includes(search.toLowerCase());
+
+    return matchesFilter && matchesSearch;
+  });
+
   return (
     <div style={{ padding: "20px" }}>
       <h1>Task Manager App</h1>
-
-      <TaskForm onAddTask={addTask} />
-
+   
+        <input
+        type="text"
+        placeholder="Search tasks..."
+        value={search}
+        onChange={(e) => setSearch(e.target.value)}
+        style={{ marginBottom: "10px", display: "block" }}
+/>
+      <TaskForm onAddTask={addTask} />   
       <TaskList
         tasks={tasks}
         onToggleTask={toggleTask}
