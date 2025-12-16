@@ -150,11 +150,26 @@ export default function Navbar() {
                     </button>
 
                     <div>
-                        <button>
+                        <button onClick={() => (window.location.href = '/login')}
+                            style={loginButtonStyle}
+                            onMouseEnter={(e) => {
+                                e.target.style.backgroundColor = isDarkMode ? '#333' : '#e0e0e0';
+                            }}
+                            onMouseLeave={(e) => {
+                                e.target.style.backgroundColor = 'transparent'
+                            }}
+                            >
                             Login
                         </button>
 
-                        <button>
+                        <button onClick={() => (window.location.href = '/signup')}
+                            style={signupButtonStyle}
+                            onMouseEnter={(e) => {
+                                e.target.style.backgroundColor = '#f5b5e9ff';
+                            }}
+                            onMouseLeave={(e) => {
+                                e.target.style.backgroundColor = '#f5b5e9ff'
+                            }}>
                             Sign Up
                         </button>
                     </div>
