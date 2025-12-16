@@ -1,17 +1,19 @@
-import { useState } from "react";
-
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Navbar from "./components/layout/Navbar.jsx";
 export default function App() {
-  const [text, setText] = useState("");
+
   return (
-    <div>
-      <h1>Rebuild Task App</h1>
+    <Router>
+      <Navbar />
+
+      {/* <h1>Rebuild Task App</h1>
 
       <input 
       type="text"
       value={text}
       onChange={(e) => setText(e.target.value)}
       />
-      <p>You typed: {text}</p>
-    </div>
+      <p>You typed: {text}</p> */}
+    </Router>
   );
 }
