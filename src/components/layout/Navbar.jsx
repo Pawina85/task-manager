@@ -23,6 +23,8 @@ export default function Navbar() {
     alignItems: 'center',
     transition: 'background-color 0.3s ease',
     boxShadow: '0 2px 8px rgba(0,0,0,0.1)',
+    flexWrap: 'wrap', // Allow wrapping on smaller screens
+    gap: '1rem',
   };
 
    const linkStyle = {
@@ -92,7 +94,7 @@ export default function Navbar() {
             color: isDarkMode ? '#f5b5e9ff' : '#251c25ff'}}>Focus flow</p>
         </a>
       </div>
-        <div className="nav-links" style={{display: 'flex', alignItems: "center", gap: '2rem'}}>
+        <div className="nav-links" style={{display: 'flex', alignItems: "center", gap: '1rem'}}>
             <ul style={{
                 listStyle: 'none',
                 display: 'flex',
@@ -149,7 +151,7 @@ export default function Navbar() {
                         {isDarkMode ? '🌞' : '🌙'}
                     </button>
 
-                    <div>
+                    <div style={{ display: 'flex', alignItems: 'center'}}>
                         <button onClick={() => (window.location.href = '/login')}
                             style={loginButtonStyle}
                             onMouseEnter={(e) => {
