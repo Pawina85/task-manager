@@ -1,14 +1,14 @@
 import { NavLink} from "react-router-dom";
-import { useState } from "react";
+import { useTheme } from "../context/ThemeContext";
 
 export default function Navbar() {
-    const [isDarkMode, setIsDarkMode] = useState(false);
+    const { isDarkMode, toggleTheme } = useTheme();
 
-    const toggleTheme = () => {
-        setIsDarkMode(!isDarkMode);
+    // const toggleTheme = () => {
+    //     setIsDarkMode(!isDarkMode);
 
-        document.body.style.className = isDarkMode ? 'light-mode' : 'dark-mode';
-    }
+    //     document.body.style.className = isDarkMode ? 'light-mode' : 'dark-mode';
+    // }
 
       const navStyle = {
     width: '100%',
