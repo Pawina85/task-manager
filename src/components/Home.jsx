@@ -1,5 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import { useTheme } from "./context/ThemeContext.jsx";
+import {CirclePlay} from 'lucide-react';
 
 export default function Home() {
     const navigate = useNavigate();
@@ -95,7 +96,7 @@ return (
             >Get Started</button>
             <button
             onClick={handleWatchDemo}
-            style={secondaryButtonStyle}
+            style={{...secondaryButtonStyle, display: 'flex', alignItems: 'center', gap: '0.5rem' }}
             onMouseEnter={(e) => {
                 e.target.style.backgroundColor = '#4CAF50',
                 e.target.style.color = 'white';
@@ -103,7 +104,7 @@ return (
             onMouseLeave={(e) => {
                 e.target.style.backgroundColor = 'transparent',
                 e.target.style.color = '#4CAF50';
-            }} >Watch Demo</button>
+            }} > <CirclePlay size={20} /> Watch Demo</button>
         </div>
         </div>
         {/* <div style={imageContainerStyle}> */}
