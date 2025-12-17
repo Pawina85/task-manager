@@ -1,5 +1,6 @@
 import { NavLink} from "react-router-dom";
 import { useTheme } from "../context/ThemeContext";
+import {CirclePlay} from 'lucide-react';
 
 export default function Navbar() {
     const { isDarkMode, toggleTheme } = useTheme();
@@ -172,6 +173,7 @@ export default function Navbar() {
                             onMouseLeave={(e) => {
                                 e.target.style.backgroundColor = '#f5b5e9ff'
                             }}>
+                            
                             Sign Up
                         </button>
                     </div>
