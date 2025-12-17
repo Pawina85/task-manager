@@ -2,22 +2,22 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Navbar from "./components/layout/Navbar.jsx";
 import Home from "./components/Home.jsx";
 import Features from "./components/Features.jsx";
+import Dashboard from "./components/Dashboard.jsx";
+import Login from "./components/Login.jsx";
+import Signup from "./components/Signup.jsx";
+
 export default function App() {
 
   return (
     <Router>
       <Navbar />
-      <Home />
-      <Features />
-
-      {/* <h1>Rebuild Task App</h1>
-
-      <input 
-      type="text"
-      value={text}
-      onChange={(e) => setText(e.target.value)}
-      />
-      <p>You typed: {text}</p> */}
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/features" element={<Features />} />
+        <Route path="/dashboard" element={<Dashboard />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/signup" element={<Signup />} />
+      </Routes>
     </Router>
   );
 }
