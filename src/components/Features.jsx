@@ -9,19 +9,19 @@ export default function Features() {
             icon: <Check size={28} />,
             title: 'Task Management',
             description: "Create, organize, and prioritize your tasks with a clean, distraction-free interface.",
-            image: '/images/feature-task-management.png'
+            image: '/fea1.png'
         },
         { 
             icon: <BookOpen size={28} />,
             title: "Notes & Ideas",
             description: "Capture thoughts instantly and keep them to connected with your work.",
-            image: '/images/feature-notes-ideas.png'
+            image: '/feature2.png'
         },
         {
             icon: <TrendingUp size={28} />,
             title: "Goal Tracking",
             description: "Set, track, and achieve your goals effectively with visual progress indicators.",
-            image: "/goal-tracking.png" // Replace with your actual image path
+            image: "/fea3.png" // Replace with your actual image path
         }
     ]
 
@@ -105,7 +105,7 @@ const imageContainerStyle = {
 const imageStyle = {
     width: '100%',
     height: '100%',
-    objectFit: 'cover',
+    objectFit: 'contain',
 }
 
 const ctaContainerStyle = {

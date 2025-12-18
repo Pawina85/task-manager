@@ -198,7 +198,11 @@ export default function About() {
 
                     {/* About the Creator */}
                     <div style={creatorCardStyle}>
-                        <div style={avatarStyle}></div>
+                        <img
+                            src="/aomki.png"
+                            alt="Creator Avatar"
+                            style={avatarStyle}
+                        />
                         <div>
                             <h2 style={cardTitleStyle}>About the Creator</h2>
                             <p style={cardTextStyle}>
