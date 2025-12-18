@@ -44,6 +44,18 @@ export default function About() {
                 <Check size={20} style={checkIconStyle} />
                 <span>Simplicity over complexity</span>
              </div>
+              <div style={listItemStyle}>
+                <Check size={20} style={checkIconStyle} />
+                <span>Focus before features</span>
+              </div>
+                <div style={listItemStyle}>
+                    <Check size={20} style={checkIconStyle} />
+                    <span>Calm and clean design</span>
+                </div>
+                <div style={listItemStyle}>
+                    <Check size={20} style={checkIconStyle} />
+                    <span>Productivity without pressure</span>
+                </div>
             </div>
         </div>
       
