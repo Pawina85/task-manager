@@ -25,8 +25,8 @@ export default function Home() {
     fontWeight: '600',
     borderRadius: '25px',
     border: 'none',
-    backgroundColor: '#4CAF50',
-    color: 'white',
+    backgroundColor: isDarkMode ? '#ffffff' : '#000000',
+    color: isDarkMode ? '#000000' : '#ffffff',
     cursor: 'pointer',
     transition: 'all 0.3s ease',
     boxShadow: '0 4px 6px rgba(0,0,0,0.1)',
@@ -37,9 +37,9 @@ export default function Home() {
     fontSize: '1rem',
     fontWeight: '600',
     borderRadius: '25px',
-    border: '2px solid #4CAF50',
+    border: `2px solid ${isDarkMode ? '#ffffff' : '#000000'}`,
     backgroundColor: 'transparent',
-    color: '#4CAF50',
+    color: isDarkMode ? '#ffffff' : '#000000',
     cursor: 'pointer',
     transition: 'all 0.3s ease',
   };
@@ -84,12 +84,12 @@ return (
             onClick={handleGetStarted}
             style={primaryButtonStyle}
             onMouseEnter={(e) => {
-                e.target.style.backgroundColor = '#45a049',
+                e.target.style.opacity = '0.8',
                 e.target.style.transform = 'translateY(-2px)',
                 e.target.style.boxShadow = '0 6px 12px rgba(0,0,0,0.15)'
             }}
             onMouseLeave={(e) => {
-                e.target.style.backgroundColor = '#4CAF50',
+                e.target.style.opacity = '1',
                 e.target.style.transform = 'translateY(0)',
                 e.target.style.boxShadow = '0 4px 6px rgba(0,0,0,0.1)'
             }}
@@ -98,12 +98,12 @@ return (
             onClick={handleWatchDemo}
             style={{...secondaryButtonStyle, display: 'flex', alignItems: 'center', gap: '0.5rem' }}
             onMouseEnter={(e) => {
-                e.target.style.backgroundColor = '#4CAF50',
-                e.target.style.color = 'white';
+                e.target.style.backgroundColor = isDarkMode ? '#ffffff' : '#000000',
+                e.target.style.color = isDarkMode ? '#000000' : '#ffffff';
             }}
             onMouseLeave={(e) => {
                 e.target.style.backgroundColor = 'transparent',
-                e.target.style.color = '#4CAF50';
+                e.target.style.color = isDarkMode ? '#ffffff' : '#000000';
             }} > <CirclePlay size={20} /> Watch Demo</button>
         </div>
         </div>

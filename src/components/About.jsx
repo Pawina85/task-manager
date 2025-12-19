@@ -86,7 +86,7 @@ export default function About() {
     };
 
     const checkIconStyle = {
-        color: '#4CAF50',
+        color: isDarkMode ? '#ffffff' : '#000000',
         flexShrink: 0,
     };
 
