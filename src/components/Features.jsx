@@ -105,7 +105,8 @@ const imageContainerStyle = {
 const imageStyle = {
     width: '100%',
     height: '100%',
-    objectFit: 'cover-fit',
+    objectFit: 'cover',
+    
 }
 
 const ctaContainerStyle = {
@@ -119,8 +120,8 @@ const ctaTitleStyle = {
     color: isDarkMode ? '#ffffff' : '#1a1a1a',
 }
  const ctaButtonStyle = {
-        backgroundColor: '#ec4899',
-        color: '#ffffff',
+        backgroundColor: isDarkMode ? '#ffffff' : '#000000',
+        color: isDarkMode ? '#000000' : '#ffffff',
         padding: '0.875rem 2rem',
         fontSize: '1.1rem',
         fontWeight: '500',
@@ -141,12 +142,12 @@ const ctaTitleStyle = {
     };
 
     const handleButtonEnter = (e) => {
-        e.currentTarget.style.backgroundColor = '#db2777';
-        e.currentTarget.style.transfrom = 'translateY(-2px)';
-        e.currentTarget.style.boxShadow = '0 5px 15px rgba(236, 72, 153, 0.4)';
+        e.currentTarget.style.opacity = '0.8';
+        e.currentTarget.style.transform = 'translateY(-2px)';
+        e.currentTarget.style.boxShadow = isDarkMode ? '0 5px 15px rgba(255, 255, 255, 0.2)' : '0 5px 15px rgba(0, 0, 0, 0.3)';
     }
     const handleButtonLeave = (e) => {
-        e.currentTarget.style.backgroundColor = '#ec4899';
+        e.currentTarget.style.opacity = '1';
         e.currentTarget.style.transform = 'translateY(0)';
         e.currentTarget.style.boxShadow = 'none';
     }

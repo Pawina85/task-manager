@@ -56,8 +56,8 @@ export default function Navbar() {
 
   const signupButtonStyle = {
     ...buttonStyle,
-    backgroundColor: '#4CAF50',
-    color: 'white',
+    backgroundColor: isDarkMode ? '#ffffff' : '#000000',
+    color: isDarkMode ? '#000000' : '#ffffff',
   };
 
   const themeToggleStyle = {
@@ -92,7 +92,7 @@ export default function Navbar() {
             <p style={{fontSize: 'clamp(1rem, 2.5vw, 1.5rem)',
             margin: 0,
             fontWeight: 'bold',
-            color: isDarkMode ? '#f5b5e9ff' : '#251c25ff'}}>Focus flow</p>
+            color: isDarkMode ? '#ffffff' : '#000000'}}>Focus flow</p>
         </a>
       </div>
         <div className="nav-links" style={{display: 'flex', alignItems: "center", gap: '1rem'}}>
@@ -168,10 +168,10 @@ export default function Navbar() {
                         <button onClick={() => (window.location.href = '/signup')}
                             style={signupButtonStyle}
                             onMouseEnter={(e) => {
-                                e.target.style.backgroundColor = '#f5b5e9ff';
+                                e.target.style.opacity = '0.8';
                             }}
                             onMouseLeave={(e) => {
-                                e.target.style.backgroundColor = '#f5b5e9ff'
+                                e.target.style.opacity = '1';
                             }}>
                             
                             Sign Up
