@@ -48,7 +48,7 @@ export default function Login() {
       <div style={styles.card}>
         <div style={styles.header}>
         <h1 style={styles.title}>Welcome Back</h1>
-        <p style={style}>Sign in to your account</p>
+        <p style={styles}>Sign in to your account</p>
       </div>
       {error && (
         <div style={styles.error}>
