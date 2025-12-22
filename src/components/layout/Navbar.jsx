@@ -75,7 +75,7 @@ export default function Navbar() {
     <nav style={navStyle}>
                    
       <div className="nav-logo">
-        <a href="home" style={{
+        <NavLink to="/" style={{
             display: 'flex',
             flexDirection: 'row',
             alignItems: 'center',
@@ -93,7 +93,7 @@ export default function Navbar() {
             margin: 0,
             fontWeight: 'bold',
             color: isDarkMode ? '#ffffff' : '#000000'}}>Focus flow</p>
-        </a>
+        </NavLink>
       </div>
         <div className="nav-links" style={{display: 'flex', alignItems: "center", gap: '1rem'}}>
             <ul style={{

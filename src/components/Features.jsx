@@ -1,8 +1,10 @@
 import {Check, BookOpen, TrendingUp } from 'lucide-react';
 import { useTheme } from './context/ThemeContext';
+import { useNavigate } from 'react-router-dom';
 
 export default function Features() {
     const { isDarkMode } = useTheme();
+    const navigate = useNavigate();
 
     const features =[
         {
@@ -187,6 +189,7 @@ const ctaTitleStyle = {
                 style={ctaButtonStyle}
                 onMouseEnter={handleButtonEnter}
                 onMouseLeave={handleButtonLeave}
+                onClick={() => navigate('/signup')}
                 >
                     Get Started
                 </button>
