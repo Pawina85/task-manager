@@ -22,45 +22,122 @@ body.dark-mode {
   background-color: #0d1117;
   color: #e0e0e0;
 }
-body {
-  transition: background-color 0.3s ease, color 0.3s ease;
-}
 
 /* Add padding to main content to account for fixed navbar */
 #root {
-  padding-top: 80px;
+  padding-top: 90px;
 }
 
-/* Responsive navbar for smaller screens */
-@media (max-width: 1024px) {
-  nav {
-    padding: 1rem !important;
-  }
-
-  .nav-links {
-    gap: 1rem !important;
-  }
-
-  .nav-links ul {
-    gap: 0.25rem !important;
-  }
-}
-
+/* Mobile-only responsive styles (tablet and below) */
 @media (max-width: 768px) {
-  nav {
-    flex-direction: column !important;
-    padding: 1rem !important;
+  #root {
+    padding-top: 80px;
   }
 
-  .nav-links {
-    flex-direction: column !important;
-    width: 100%;
-    gap: 1rem !important;
+  nav {
+    padding: 0.75rem 1rem !important;
+  }
+
+  .nav-logo p {
+    font-size: 1.2rem !important;
   }
 
   .nav-links ul {
-    flex-direction: column !important;
+    flex-wrap: wrap;
+    gap: 0.5rem !important;
+  }
+
+  .nav-links ul li a {
+    padding: 0.5rem 0.8rem !important;
+    font-size: 0.9rem !important;
+  }
+}
+
+/* Mobile-only responsive styles (phone only) */
+@media (max-width: 480px) {
+  #root {
+    padding-top: 75px;
+  }
+
+  nav {
+    padding: 0.75rem 1rem !important;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+
+  .nav-logo {
+    flex: 1;
+    min-width: 150px;
+    margin-bottom: 0;
+  }
+
+  .nav-logo img {
+    max-width: 40px !important;
+  }
+
+  .nav-logo p {
+    font-size: 1.1rem !important;
+  }
+
+  .nav-links {
     width: 100%;
-    text-align: center;
+    flex-direction: row !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    gap: 0.5rem !important;
+  }
+
+  .nav-links ul {
+    flex: 1;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    justify-content: flex-start;
+    gap: 0.5rem !important;
+    padding: 0.25rem 0;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .nav-links ul::-webkit-scrollbar {
+    display: none;
+  }
+
+  .nav-links ul li {
+    flex-shrink: 0;
+  }
+
+  .nav-links ul li a {
+    padding: 0.5rem 0.875rem !important;
+    font-size: 0.9rem !important;
+    white-space: nowrap;
+  }
+
+  .nav-links button {
+    padding: 0.5rem 1rem !important;
+    font-size: 0.875rem !important;
+    flex-shrink: 0;
+  }
+
+  .nav-links > div:last-child {
+    display: flex !important;
+    flex-shrink: 0;
+    gap: 0.5rem;
+  }
+
+  .nav-links > div:last-child button {
+    padding: 0.5rem 1rem !important;
+  }
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Improve touch targets on mobile */
+@media (hover: none) and (pointer: coarse) {
+  button, a {
+    min-height: 44px;
+    min-width: 44px;
   }
 }
